@@ -3,7 +3,7 @@
 function printInventory(inputs) {
     var allitem = loadAllItems();
     var pro = loadPromotions();
-    dateDigitToString = function (num) {
+/*    dateDigitToString = function (num) {
         return num < 10 ? '0' + num : num;
     };
     var currentDate = new Date(),
@@ -14,7 +14,7 @@ function printInventory(inputs) {
         minute = dateDigitToString(currentDate.getMinutes()),
         second = dateDigitToString(currentDate.getSeconds()),
         formattedDateString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
-    //console.log(allitem[1].barcode);
+    //console.log(allitem[1].barcode);*/
     var box= getbox();
      //存放赠送商品
    /* [
@@ -155,7 +155,8 @@ function printInventory(inputs) {
         }
 
     }*/
-    var result =
+    prints(box,bbox);
+   /* var result =
         "***<没钱赚商店>购物清单***\n" +
         '打印时间：' + formattedDateString + '\n' +
         '----------------------\n' +
@@ -180,6 +181,6 @@ function printInventory(inputs) {
         '----------------------\n' +
         '总计：51.00(元)\n' +
         '节省：'+(box[0].price+box[1].price)+'0(元)\n' +
-        '**********************';
-   console.log(result);
+        '**********************';*/
+   //console.log(result);
 }

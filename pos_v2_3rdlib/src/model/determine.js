@@ -13,7 +13,7 @@ _.each(input, function(all) {
     })
 
 });*/
-function determine(inputs,allitem) {
+function determine(inputs,allitem) {        //确定购买商品的数量
 
 //    var count =0;
 //    _.each(inputs, function(all) {
@@ -27,13 +27,11 @@ function determine(inputs,allitem) {
 //    });//
     for (var i = 0; i < allitem.length; i++) {
         var count = 0;
-
         for (var j = 0; j < inputs.length; j++) {
             if (inputs[j].length == 10 && inputs[j] == allitem[i].barcode) {
                     count = count + 1;
 
                 }
-
                 /*   }else if (inputs[j].length>10){
                  var a;
                  a =inputs[j].split("-"[2]);
@@ -41,13 +39,9 @@ function determine(inputs,allitem) {
 
 
                  }*/
-
                 allitem[i].count = count;
             }
-
         }
-
-
     for (var e = 0; e < inputs.length; e++) {
         var abc;
         for (var u = 0; u < allitem.length; u++) {
@@ -71,44 +65,6 @@ function determine(inputs,allitem) {
 }
 
 
-function goods(allitem,bbox){
-//    var bbox= getbbox();
-    var mm=0;
-    for (var sm=0;sm<allitem.length;sm++){
-
-        //   console.log(allitem[sm].count.toString());
-        if(allitem[sm].count != 0){
-            //  console.log(allitem[sm].count.toString());
-            bbox[mm].barcode =allitem[sm].barcode;
-            bbox[mm].count =allitem[sm].count;
-            bbox[mm].price =allitem[sm].price;
-            bbox[mm].name =allitem[sm].name;
-            bbox[mm].unit =allitem[sm].unit;
-            mm= mm+1;
-        }
-
-    }
-}
-function gift(pro,bbox,box){
-//    var box= getbox();
-    var cc=0;
-    //为赠送商品到盒子赋值
-    for (var ii=0;ii<pro[0].barcodes.length;ii++){
-
-        for (var jj=0;jj<bbox.length;jj++){
-            if( pro[0].barcodes[ii] == bbox[jj].barcode && bbox[jj].count != 0){
-//                console.log(cc.toString());
-                box[cc].barcode = bbox[jj].barcode;
-                box[cc].name = bbox[jj].name;
-                box[cc].count =( bbox[jj].count>=2)?(1):(0);
-                box[cc].price = bbox[jj].price;
-                box[cc].unit = bbox[jj].unit;
-                cc+=1;
-            }
-        }
-
-    }
-}
 //}
 //function fruit(inputs,allitem) {
 //    for (var e= 0; e < inputs.length; e++) {
