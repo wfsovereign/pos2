@@ -15,7 +15,9 @@ function printInventory(inputs) {
         second = dateDigitToString(currentDate.getSeconds()),
         formattedDateString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
     //console.log(allitem[1].barcode);
-    var box=[           //存放赠送商品
+    var box= getbox();
+     //存放赠送商品
+   /* [
         {
             barcode:" ",
             name: "",
@@ -34,8 +36,10 @@ function printInventory(inputs) {
 
 
         }
-    ];
-    var bbox=[      //存放已购买商品
+    ];*/
+    var bbox= getbbox();
+      //存放已购买商品
+   /* [
         {
             barcode:" ",
             name: "",
@@ -60,9 +64,9 @@ function printInventory(inputs) {
 
 
         }
-    ];
+    ];*/
     //将所有购买到商品添加购买数量，没有则为零
-    for (var i = 0; i < allitem.length; i++) {
+  /*  for (var i = 0; i < allitem.length; i++) {
         var count = 0;
 
         for (var j = 0; j < inputs.length; j++) {
@@ -74,24 +78,45 @@ function printInventory(inputs) {
 
         }
 
-    }
+    }*/
+   determine(inputs,allitem);
+   // fruit(inputs,allitem);
+//    _.each(inputs, function(all) {
+//        _.each(allitem,function(bil){
+//            if (all == bil.barcode){
+//                count+=1;
+//            }
+//            bil.barcode=count;
+//        })
+//
+//    });
 
-
-    //设置水果类数量
-    for (var e= 0; e < inputs.length; e++) {
-        var abc = 0;
+// 设置水果类数量
+/*    for (var e= 0; e < inputs.length; e++) {   //最终方法
+        var abc;
         for (var u = 0; u < allitem.length; u++) {
-            if (inputs[e].substring(11, 12) > 0 && inputs[e].substring(0, 10) == allitem[u].barcode) {
+            if (inputs[e].length > 10) {
+                abc = inputs[e].split("-", [2]);
+                //console.log(abc);
+                if (abc[0] == allitem[u].barcode) {
+                    allitem[u].count = abc[1];
+                }
+
+            }
+           */
+    /* if (inputs[e].substring(11, 12) > 0 && inputs[e].substring(0, 10) == allitem[u].barcode) {   //单一方法
                 abc = inputs[e].substring(11, 12);
 
 
                 allitem[u].count = abc;
-            }
+            }*/
 
-        }
 
-    }
-    var mm=0;
+  /*      }
+
+    }*/
+  // console.log('lizhi   '+allitem[3].count);
+  /*  var mm=0;
     for (var sm=0;sm<allitem.length;sm++){
 
         //   console.log(allitem[sm].count.toString());
@@ -105,13 +130,16 @@ function printInventory(inputs) {
             mm= mm+1;
         }
 
-    }
+    }*/
+    goods(allitem,bbox);
     //console.log(mm.toString());
     // console.log(allitem);
     // console.log(bbox);
-
-    var cc=0;
+   // gift(pro,bbox);
+    gift(pro,bbox,box);
     //为赠送商品到盒子赋值
+   /* var cc=0;
+
     for (var ii=0;ii<pro[0].barcodes.length;ii++){
 
         for (var jj=0;jj<bbox.length;jj++){
@@ -126,7 +154,7 @@ function printInventory(inputs) {
             }
         }
 
-    }
+    }*/
     var result =
         "***<没钱赚商店>购物清单***\n" +
         '打印时间：' + formattedDateString + '\n' +
@@ -153,5 +181,5 @@ function printInventory(inputs) {
         '总计：51.00(元)\n' +
         '节省：'+(box[0].price+box[1].price)+'0(元)\n' +
         '**********************';
-    console.log(result);
+   console.log(result);
 }

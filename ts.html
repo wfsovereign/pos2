@@ -6,7 +6,29 @@
 </head>
 <body>
 <script>
-    function Item(barcode, name, unit, price) {
+    inputs = [
+        'ITEM000001',
+        'ITEM000001',
+        'ITEM000001',
+        'ITEM000001',
+        'ITEM000001',
+        'ITEM000003-2',
+        'ITEM000005',
+        'ITEM000005',
+        'ITEM000005'
+    ];
+    var inputs1='ITEM000003-2';
+       var a= inputs1.split("-");
+//    for(var i=0;i<inputs.length;i++){
+//        if  (inputs[i].length>10){
+//            inputs[i].split("-",[2])
+//        }
+//
+//    }
+    console.log(inputs[5].length);
+console.log(a[1]);
+
+   /* function Item(barcode, name, unit, price) {
         this.barcode = barcode;
         this.name = name;
         this.unit = unit;
@@ -23,7 +45,7 @@
         ];
     }
     var b =loadAllItems();
-    console.log(b[1].barcode);
+    console.log(b[1].barcode);*/
 
 
 
