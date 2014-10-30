@@ -3,40 +3,74 @@
  */
 
 
-function goods(allitem,bbox){       //为已购买的东西赋值
+function goods(allitem,bbox){       //向生成的已购买商品种类赋值
 //    var bbox= getbbox();
-    var mm=0;
-    for (var sm=0;sm<allitem.length;sm++){
+    /*console.log(bbox);
+    console.log(allitem);
+   */
+        //console.log(allitem)
+     for (var i=0;i<allitem.length;i++){
+         //console.log(allitem[i]);
+        if (allitem[i].count>0){
+
+           // console.log(bbox);
+//            console.log(i.toString());
+     // console.log(allitem[i].name);
+//            console.log(m.toString());
+            //console.log()
+            var obj ={};
+
+            obj.barcode=allitem[i].barcode;
+            obj.count=allitem[i].count;
+            obj.name=allitem[i].name;
+            obj.unit=allitem[i].unit;
+            obj.price=allitem[i].price;
+            bbox.push(obj);
+           // console.log(bbox);
+
+        }
+   }
+   // console.log(bbox)
+    // console.log(bbox);
+   /* for (var sm=0;sm<allitem.length;sm++){
 
         //   console.log(allitem[sm].count.toString());
-        if(allitem[sm].count != 0){
-            //  console.log(allitem[sm].count.toString());
+        if(allitem[sm].count > 0){
+//            console.log(mm.toString())
+//
+//          console.log(allitem[sm].count.toString());
+//            console.log(allitem[sm].name)
+
             bbox[mm].barcode =allitem[sm].barcode;
             bbox[mm].count =allitem[sm].count;
             bbox[mm].price =allitem[sm].price;
             bbox[mm].name =allitem[sm].name;
             bbox[mm].unit =allitem[sm].unit;
+            console.log(bbox[mm].name)
+            console.log(bbox[mm])
             mm= mm+1;
         }
 
-    }
+    }*/
+   // console.log(bbox)
 }
 function gift(pro,bbox,box) {        //为赠送的东西赋值
 //    var box= getbox();
-    var cc = 0;
+
     //为赠送商品到盒子赋值
     for (var ii = 0; ii < pro[0].barcodes.length; ii++) {
 
         for (var jj = 0; jj < bbox.length; jj++) {
             if (pro[0].barcodes[ii] == bbox[jj].barcode && bbox[jj].count != 0) {
 //                console.log(cc.toString());
-                box[cc].barcode = bbox[jj].barcode;
-                box[cc].name = bbox[jj].name;
-                box[cc].count = ( bbox[jj].count >= 2) ? (1) : (0);
-                box[cc].price = bbox[jj].price;
-                box[cc].unit = bbox[jj].unit;
-                cc += 1;
-            }
+                var obj ={};
+                obj.barcode = bbox[jj].barcode;
+                obj.name = bbox[jj].name;
+                obj.count = ( bbox[jj].count >= 2) ? (1) : (0);
+                obj.price = bbox[jj].price;
+                obj.unit = bbox[jj].unit;
+
+                box.push(obj);            }
         }
 
     }

@@ -15,7 +15,14 @@ function printInventory(inputs) {
         second = dateDigitToString(currentDate.getSeconds()),
         formattedDateString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
     //console.log(allitem[1].barcode);*/
-    var box= getbox();
+   var box= getbox();
+   var bbox= getbbox();
+    determine(inputs,allitem);
+    var bbox= getbbox(allitem);
+    goods(allitem,bbox);
+    gift(pro,bbox,box);
+
+    prints(box,bbox);
      //存放赠送商品
    /* [
         {
@@ -37,7 +44,7 @@ function printInventory(inputs) {
 
         }
     ];*/
-    var bbox= getbbox();
+
       //存放已购买商品
    /* [
         {
@@ -79,7 +86,8 @@ function printInventory(inputs) {
         }
 
     }*/
-   determine(inputs,allitem);
+
+
    // fruit(inputs,allitem);
 //    _.each(inputs, function(all) {
 //        _.each(allitem,function(bil){
@@ -90,6 +98,8 @@ function printInventory(inputs) {
 //        })
 //
 //    });
+
+   // var box= getbox(pro,bbox);
 
 // 设置水果类数量
 /*    for (var e= 0; e < inputs.length; e++) {   //最终方法
@@ -131,12 +141,15 @@ function printInventory(inputs) {
         }
 
     }*/
-    goods(allitem,bbox);
-    //console.log(mm.toString());
+
+   // console.log(bbox);
+  // console.log(bbox);
+  /*  //console.log(mm.toString());
     // console.log(allitem);
     // console.log(bbox);
-   // gift(pro,bbox);
-    gift(pro,bbox,box);
+   // gift(pro,bbox);*/
+    //console.log(bbox)
+
     //为赠送商品到盒子赋值
    /* var cc=0;
 
@@ -155,7 +168,7 @@ function printInventory(inputs) {
         }
 
     }*/
-    prints(box,bbox);
+
    /* var result =
         "***<没钱赚商店>购物清单***\n" +
         '打印时间：' + formattedDateString + '\n' +
