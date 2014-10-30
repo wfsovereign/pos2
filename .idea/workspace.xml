@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85b9848c-9126-4f01-92cd-137cd31ccc89" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/determine.js" afterPath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/determine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/goods.js" afterPath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/goods.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos_v2_3rdlib/src/main.js" afterPath="$PROJECT_DIR$/pos_v2_3rdlib/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/modelbox.js" afterPath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/modelbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/print.js" afterPath="$PROJECT_DIR$/pos_v2_3rdlib/src/model/print.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ts.html" afterPath="$PROJECT_DIR$/ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="85b9848c-9126-4f01-92cd-137cd31ccc89" name="Default" comment="" />
     <ignored path="pos.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
