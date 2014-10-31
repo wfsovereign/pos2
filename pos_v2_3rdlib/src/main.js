@@ -8,6 +8,8 @@ function printInventory(inputs) {
     var item = new determine();
     item.getdeter(inputs, allitem);
     bbox = item.getgoods(allitem);
+    box = item.getgift(pro, bbox);
+    prints(box, bbox);
 //    box=[];
 //    var rel =pro[0].barcodes;
 //    console.log(rel)
@@ -45,11 +47,17 @@ function printInventory(inputs) {
         }
 
     }*/
+//    var a= [1,2,3,4,5];
+//    var count =0;
+//    _.each(a,function(b){
+//        count+=1;
+//        console.log(b);
+//    });
+//    console.log(count.toString());
 
 
 
-    box = item.getgift(pro, bbox);
-    prints(box, bbox);
+
     //console.log(box)
 
 
