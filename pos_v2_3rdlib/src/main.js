@@ -2,12 +2,115 @@
 function printInventory(inputs) {
     var allitem = loadAllItems();
     var pro = loadPromotions();
+    //var rel =pro[0].barcodes;
+
     var box, bbox;
     var item = new determine();
     item.getdeter(inputs, allitem);
     bbox = item.getgoods(allitem);
+//    box=[];
+//    var rel =pro[0].barcodes;
+//    console.log(rel)
+//    _.each(rel,function(b){
+//     //for (var ii = 0; ii < pro[0].barcodes.length; ii++) {
+//     _.each(bbox,function(bbox) {
+//     //console.log(b)
+//     if (b == bbox.barcode && bbox.count != 0) {
+//     //                console.log(cc.toString());
+//     var obj = {};
+//     obj.barcode = bbox.barcode;
+//     obj.name = bbox.name;
+//     obj.count = ( bbox.count >= 2) ? (1) : (0);
+//     obj.price = bbox.price;
+//     obj.unit = bbox.unit;
+//
+//     box.push(obj);
+//
+//     }
+//     })
+//     });
+/*    for (var ii = 0; ii < pro[0].barcodes.length; ii++) {
+
+        for (var jj = 0; jj < bbox.length; jj++) {
+            if (pro[0].barcodes[ii] == bbox[jj].barcode && bbox[jj].count != 0) {
+//                console.log(cc.toString());
+                var obj ={};
+                obj.barcode = bbox[jj].barcode;
+                obj.name = bbox[jj].name;
+                obj.count = ( bbox[jj].count >= 2) ? (1) : (0);
+                obj.price = bbox[jj].price;
+                obj.unit = bbox[jj].unit;
+
+                box.push(obj);            }
+        }
+
+    }*/
+
+
+
     box = item.getgift(pro, bbox);
     prints(box, bbox);
+    //console.log(box)
+
+
+
+
+
+    /*var a=[
+        {
+            barcode: 'ITEM000000',
+            name: '可口可乐',
+            unit: '瓶',
+            price: 3.00,
+            count:1
+        },
+        {
+            barcode: 'ITEM000001',
+            name: '雪碧',
+            unit: '瓶',
+            price: 3.00,
+            count:3
+        },
+        {
+            barcode: 'ITEM000002',
+            name: '苹果',
+            unit: '斤',
+            price: 5.50,
+            count:2
+        }];
+    var str="";
+    str = _.each(a,function(num){
+        str=str+"名称：" + num.name   +
+        "，数量：" + num.count +num.unit+"\n"
+    });
+   // console.log(str);
+    var b=[1,2,3,4,5];
+    var c=0;
+    c = _.reduce(a,function(memo,num){
+        return memo+"名称：" + num.name   +
+        "，数量：" + num.count +num.unit+"\n"
+    },"");*/
+    //console.log(c);
+ /*   for (var j=0;j<bbox.length;j++){                   //得出已购买商品的小计
+        if(bbox[j].barcode == box[m].barcode){          //如果是优惠商品则减去优惠商品的单价
+            smallsum[j] = bbox[j].count*bbox[j].price-box[m].price;
+
+            m++;
+
+        }else{
+            smallsum[j] = bbox[j].count*bbox[j].price;
+        }
+    }*/
+
+
+
+
+
+
+
+
+   //console.log(str1)
+
 }
     // goods(allitem,bbox);
     // gift(pro,bbox,box);
