@@ -4,20 +4,11 @@
 
 
 function goods(allitem,bbox){       //向生成的已购买商品种类赋值
-//    var bbox= getbbox();
-    /*console.log(bbox);
-    console.log(allitem);
-   */
-        //console.log(allitem)
+
      for (var i=0;i<allitem.length;i++){
          //console.log(allitem[i]);
         if (allitem[i].count>0){
 
-           // console.log(bbox);
-//            console.log(i.toString());
-     // console.log(allitem[i].name);
-//            console.log(m.toString());
-            //console.log()
             var obj ={};
 
             obj.barcode=allitem[i].barcode;
@@ -26,12 +17,10 @@ function goods(allitem,bbox){       //向生成的已购买商品种类赋值
             obj.unit=allitem[i].unit;
             obj.price=allitem[i].price;
             bbox.push(obj);
-           // console.log(bbox);
 
         }
    }
-   // console.log(bbox)
-    // console.log(bbox);
+
    /* for (var sm=0;sm<allitem.length;sm++){
 
         //   console.log(allitem[sm].count.toString());
@@ -52,7 +41,7 @@ function goods(allitem,bbox){       //向生成的已购买商品种类赋值
         }
 
     }*/
-   // console.log(bbox)
+
 }
 function gift(pro,bbox,box) {        //为赠送的东西赋值
 //    var box= getbox();

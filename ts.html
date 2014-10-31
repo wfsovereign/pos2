@@ -6,10 +6,151 @@
 </head>
 <body>
 <script>
-    var a=13;
+var a= [{
+    price :16
+},
+    {
+        price:12.3
+    },
+    {
+        price:15.5
+    },
+    {
+        price:13
+    }
+];
+//  function fels(bbox) {
+    function foo(bbox){
+        return (Math.ceil(bbox.price) > bbox.price)
+    }
+   /* if (foo()) {
+        //str1[u] = "0(元)";
+        return false;
+    } else {
+        //str1[u] = ".00(元)";
+        return true;
+    }*/
+var str;
+function math(a){
+    var str1=[];
+    for (var u=0;u<a.length;u++){//得出商品的.00或者0
+        if(foo(a)){
+            str1[u] ="0(元)";
+        }else{
+            str1[u] =".00(元)";
+        }
+    }
+    return str1;
+}
+function math1(a){
+    var str1=[];
+    for (var u=0;u<a.length;u++){//得出商品的.00或者0
+        if(foo(a)){
+            str1[u] ="0(元)";
+        }else{
+            str1[u] =".00(元)";
+        }
+    }
+    return str1;
+}
+
+str =math(a);
+console.log(str);
+
+
+
+
+//函数prototype方法的改写，调用其方法，以及函数私有属性的赋值与调用
+/*
+var User = function(name){
+    var name = arguments[0];
+    this.getName = function(){
+        return name;
+    };
+    this.getajax =function(){
+        var a = [{name:"12",price:20},{name:"13",price:30}];
+        return a;
+    }
+};
+    User.prototype.print = function(aq){
+        var b =this.getajax();
+        aq = b;
+        console.log(b);
+        return aq;
+    };
+
+    var user = new User("test");
+    var aq ;
+   // console.log(user.name);
+   // console.log(user.getName());
+    console.log(user.print(aq));*/
+
+
+
+
+
+
+
+
+
+//继承对象的私有属性赋值及其原型的关系
+/*
+
+var Robot = function(name) {        //声明一个构造函数
+    this.name = name;
+    this.say = function(){
+        console.log(this.name)
+    }
+};
+var info = { age: 12, sex: "boy" };
+Robot.prototype = info;
+
+var robot = new Robot("bower");
+robot.name = "cup";
+robot.age = 13;
+
+console.log(robot.age);
+
+
+*/
+
+
+/*
+var Robot = function(name) { this.name = name; };
+Robot.prototype = { age: 12, sex: "boy" };
+var robot = new Robot("cup");
+Robot.prototype.age = 13;
+console.log(robot.__proto__)
+*/
+
+
+
+
+
+
+
+/*
+
+    function apple(){
+
+    }
+    apple.prototype.print =function(b){
+        console.log(b);
+    };
+    var b ="fengyangqijun";
+
+    a=new apple();
+    a.print(b);
+
+*/
+
+
+
+
+    /*var a=13;
     var b= Math.ceil(a);
 
-    console.log(Math.ceil(a));
+    console.log(Math.ceil(a));*/
 /*
 var a = [
     {

@@ -1,28 +1,19 @@
 //TODO: Please write code in this file.
-
 function printInventory(inputs) {
     var allitem = loadAllItems();
     var pro = loadPromotions();
-/*    dateDigitToString = function (num) {
-        return num < 10 ? '0' + num : num;
-    };
-    var currentDate = new Date(),
-        year = dateDigitToString(currentDate.getFullYear()),
-        month = dateDigitToString(currentDate.getMonth() + 1),
-        date = dateDigitToString(currentDate.getDate()),
-        hour = dateDigitToString(currentDate.getHours()),
-        minute = dateDigitToString(currentDate.getMinutes()),
-        second = dateDigitToString(currentDate.getSeconds()),
-        formattedDateString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
-    //console.log(allitem[1].barcode);*/
-   var box= getbox();
-   var bbox= getbbox();
-    determine(inputs,allitem);
-    var bbox= getbbox(allitem);
-    goods(allitem,bbox);
-    gift(pro,bbox,box);
+    var box, bbox;
+    var item = new determine();
+    item.getdeter(inputs, allitem);
+    bbox = item.getgoods(allitem);
+    box = item.getgift(pro, bbox);
+    prints(box, bbox);
+}
+    // goods(allitem,bbox);
+    // gift(pro,bbox,box);
 
-    prints(box,bbox);
+    //   var box=getbox();
+//   var bbox=getbbox();
      //存放赠送商品
    /* [
         {
@@ -196,4 +187,3 @@ function printInventory(inputs) {
         '节省：'+(box[0].price+box[1].price)+'0(元)\n' +
         '**********************';*/
    //console.log(result);
-}
