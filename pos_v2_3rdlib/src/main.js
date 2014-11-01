@@ -10,6 +10,59 @@ function printInventory(inputs) {
     bbox = item.getgoods(allitem);
     box = item.getgift(pro, bbox);
     prints(box, bbox);
+}
+
+
+ /*   function foo(bbox) {     //判断该数是否为小数，是则返回true
+        return (Math.ceil(bbox.price) > bbox.price);
+    }
+    var a=[
+
+        {
+            barcode:" ",
+            name: "",
+            count:0,
+            price:4,
+            unit:""
+
+        }, {
+            barcode:" ",
+            name: "",
+            count:0,
+            price:6.3,
+            unit:""
+
+
+        }, {
+            barcode:" ",
+            name: "",
+            count:0,
+            price:9.5,
+            unit:""
+
+
+        }
+
+    ];
+    function math2 (a){
+        var pos = _.map(a,function(num){
+            if (foo(num)) {
+                return "0(元)";
+            } else {
+                return ".00(元)";
+
+
+            }
+        })
+        return pos
+    }
+
+    var b=math2(a);
+    console.log(b);
+
+}
+*/
+
 //    box=[];
 //    var rel =pro[0].barcodes;
 //    console.log(rel)
@@ -119,7 +172,7 @@ function printInventory(inputs) {
 
    //console.log(str1)
 
-}
+
     // goods(allitem,bbox);
     // gift(pro,bbox,box);
 

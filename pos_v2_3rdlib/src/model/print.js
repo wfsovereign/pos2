@@ -19,11 +19,14 @@ function foo1(b){
     return str1;
 }*/
 function math(a){
-    if (foo(a)){
-        return "0(元)";
-    }else{
-        return ".00(元)";
-    }
+    _.map(a,function(num){
+        if (foo(num)){
+            return "0(元)";
+        }else{
+            return ".00(元)";
+        }
+    })
+
 }
 /*function math1(a){           //根据传进来的数组长度通过foo（）函数判断得到为“.00”/“0”字符串
     var str1="";
@@ -76,10 +79,12 @@ function prints(box,bbox){      //打印函数
         }
     });
     str1=math(bbox);
+    console.log(str1)
     sum =_.reduce(smallsum,function(memo,num){
         return memo+num;
     },0);
     str2 =math(smallsum);
+    console.log(str2)
     str5 =math2(sum);
     for (var i=0;i<bbox.length;i++){
         str=str+"名称：" + bbox[i].name   +
@@ -95,7 +100,7 @@ function prints(box,bbox){      //打印函数
     save = _.reduce(box,function(memo,nm){
         return memo + nm.price
     },0);
-    str3 = math2(save);
+   /* str3 = math2(save);
     console.log(
             "***<没钱赚商店>购物清单***\n" +
             '打印时间：' + now+ '\n' +
@@ -108,7 +113,7 @@ function prints(box,bbox){      //打印函数
             '----------------------\n' +
             '总计：'+sum+str5+'\n' +
             '节省：'+save+str3+'\n' +
-            '**********************')
+            '**********************')*/
 }
    /* for (var j=0;j<bbox.length;j++){                   //得出已购买商品的小计
         if(bbox[j].barcode == box[m].barcode){          //如果是优惠商品则减去优惠商品的单价

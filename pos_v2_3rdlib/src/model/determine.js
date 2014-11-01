@@ -174,7 +174,7 @@ function determine() {
         _.each(rel,function(b){
         //for (var ii = 0; ii < pro[0].barcodes.length; ii++) {
             _.each(bbox,function(bbox) {
-                console.log(b)
+
                 if (b == bbox.barcode && bbox.count != 0) {
 //                console.log(cc.toString());
                     var obj = {};
