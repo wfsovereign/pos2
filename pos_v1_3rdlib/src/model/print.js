@@ -1,5 +1,5 @@
 /**
- * Created by fyqj on 14-10-31.
+ * Created by fyqj on 14-11-1.
  */
 function foo(bbox){     //判断该数是否为小数，是则返回true
     return (Math.ceil(bbox.price) > bbox.price)
@@ -9,7 +9,7 @@ function foo1(b){
 }
 function math(a){
     var tempera;
-        tempera=_.map(a,function(num){
+    tempera=_.map(a,function(num){
         if (foo(num)){
             return "0(元)";
         }else{
@@ -39,19 +39,18 @@ function math2(a){          //根据传进来的数通过foo（）函数判断�
     return str1;
 }
 function prints(box,bbox){      //打印函数
-    var now= moment().format('YYYY年MM月DD日'+" "+"HH:mm:ss");
-    //格式化输出
+
     var goodsstroutput,smallsum, m,smallsumstr,sum,save,goodspricestr,sumstr,giftstroutput,savestr;
-     goodsstroutput="" ;            //购买商品输出字符
-     smallsum =[];                  //小计值
-     m= 0;                          //box下标
-     smallsumstr=[];
-     sum =0;                          //总计值
-     save = 0;                        //节省值
-     goodspricestr = [];            //已购买商品单价字符
-     sumstr = "";                      //总计字符
-     giftstroutput = "";                      //赠送商品字符
-     savestr = "";                     //节省钱的字符
+    goodsstroutput="" ;            //购买商品输出字符
+    smallsum =[];                  //小计值
+    m= 0;                          //box下标
+    smallsumstr=[];
+    sum =0;                          //总计值
+    save = 0;                        //节省值
+    goodspricestr = [];            //已购买商品单价字符
+    sumstr = "";                      //总计字符
+    giftstroutput = "";                      //赠送商品字符
+    savestr = "";                     //节省钱的字符
     smallsum = _.map(bbox,function(num){
         if(num.barcode ==box[m].barcode){
             var sume =num.count*num.price-box[m].price;
@@ -64,7 +63,7 @@ function prints(box,bbox){      //打印函数
 
     goodspricestr = math(bbox);
 
-     sum = _.reduce(smallsum,function(memo,num){
+    sum = _.reduce(smallsum,function(memo,num){
         return memo+num;
     },0);
     smallsumstr =math1(smallsum);
@@ -87,17 +86,15 @@ function prints(box,bbox){      //打印函数
     },0);
     savestr = math2(save);
 
-     console.log(
-     "***<没钱赚商店>购物清单***\n" +
-     '打印时间：' + now+ '\n' +
-     '----------------------\n'
-     + goodsstroutput
+    console.log(
+            "***<没钱赚商店>购物清单***\n"
+            + goodsstroutput
 
-     +   '----------------------\n'+'挥泪赠送商品：\n' +
+            +   '----------------------\n'+'挥泪赠送商品：\n' +
 
-         giftstroutput+
-     '----------------------\n' +
-     '总计：' + sum + sumstr +'\n' +
-     '节省：' + save + savestr +'\n' +
-     '**********************')
+            giftstroutput+
+            '----------------------\n' +
+            '总计：' + sum + sumstr +'\n' +
+            '节省：' + save + savestr +'\n' +
+            '**********************')
 }

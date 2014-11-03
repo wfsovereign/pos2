@@ -1,5 +1,5 @@
 /**
- * Created by fyqj on 14-10-31.
+ * Created by fyqj on 14-11-1.
  */
 function determine() {
     this.getbox = function() {
@@ -32,20 +32,20 @@ determine.prototype.getdeter =function(inputs,allitem){
         });
     });
 
-        _.each(inputs,function(inputs){
-          var abc;
+    _.each(inputs,function(inputs){
+        var abc;
 
-         _.each(allitem,function(item){
+        _.each(allitem,function(item){
             if (inputs.length > 10) {
-               abc = inputs.split("-", [2]);
-               // console.log(abc);
+                abc = inputs.split("-", [2]);
+                // console.log(abc);
                 if (abc[0] == item.barcode) {
-                   item.count = abc[1];
-              }
-          }
+                    item.count = abc[1];
+                }
+            }
 
-                })
         })
+    })
 
 };
 determine.prototype.getgoods =function(allitem){

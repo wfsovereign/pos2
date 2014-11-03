@@ -1,13 +1,19 @@
 //TODO: Please write code in this file.
 function printInventory(inputs) {
+
     var allitem = loadAllItems();
+   // console.log(allitem.barco);
+    var box;
+    box = determine(inputs,allitem);
+    console.log(box);
+
+
+    /*
     for (var i = 0; i < allitem.length; i++) {
         var count = 0;
-
         for (var j = 0; j < inputs.length; j++) {
             if (inputs[j] == allitem[i].barcode) {
                count = count+1;
-
             }
             allitem[i].count = count;
         }
@@ -29,7 +35,7 @@ function printInventory(inputs) {
         ".00(元)，小计：" +
         + (allitem[4].count * allitem[4].price) + ".00(元)\n" +   '----------------------\n' +"总计：23.00(元)\n" +
         '**********************';
-    console.log(result);
+    console.log(result);*/
 
 }
   /*  var box = [

@@ -3,9 +3,19 @@
 function  printInventory(inputs) {
 
     var allitem = loadAllItems();
-    var promotion = loadPromotions();
+    var pro = loadPromotions();
+    var box, bbox;
+    var item = new determine();
+    item.getdeter(inputs, allitem);
+    bbox = item.getgoods(allitem);
+    box = item.getgift(pro, bbox);
 
-    var box=[           //存放赠送商品
+    prints(box, bbox);
+
+
+}
+
+   /* var box=[           //存放赠送商品
         {
             barcode:" ",
             name: "",
@@ -84,9 +94,7 @@ function  printInventory(inputs) {
     var mm=0;
     for (var sm=0;sm<allitem.length;sm++){
 
-     //   console.log(allitem[sm].count.toString());
         if(allitem[sm].count != 0){
-          //  console.log(allitem[sm].count.toString());
             bbox[mm].barcode =allitem[sm].barcode;
             bbox[mm].count =allitem[sm].count;
             bbox[mm].price =allitem[sm].price;
@@ -96,9 +104,6 @@ function  printInventory(inputs) {
         }
 
     }
-    //console.log(mm.toString());
-   // console.log(allitem);
-   // console.log(bbox);
 
     var cc=0;
     //为赠送商品到盒子赋值
@@ -118,11 +123,6 @@ function  printInventory(inputs) {
 
     }
 
-   // console.log(cc.toString());
-//    console.log(allitem[1].barcode);
-        //  console.log(box[0].barcode);
-//    console.log(promotion[0].barcodes);
-  //console.log(box);
 
 
 
@@ -152,9 +152,9 @@ function  printInventory(inputs) {
             '总计：51.00(元)\n' +
             '节省：'+(box[0].price+box[1].price)+'0(元)\n' +
             '**********************';
-    console.log(result);
+    console.log(result);*/
 
 
 
 
-}
+
